@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0B01869D-EBA3-48C2-ADA7-D3A22A539353</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CustomStackView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DF4F4004-CEE3-478D-9398-FCCCAE55B961</key>
+		<string>https://github.com/Djecksan/CustomStackView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CustomStackView.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DF4F4004-CEE3-478D-9398-FCCCAE55B961</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Djecksan/CustomStackView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DF4F4004-CEE3-478D-9398-FCCCAE55B961</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DF4F4004-CEE3-478D-9398-FCCCAE55B961</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CustomStackView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
