@@ -24,6 +24,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_stack reloadData];
+   
 }
 
 #pragma mark - CSVStackViewDelegate
