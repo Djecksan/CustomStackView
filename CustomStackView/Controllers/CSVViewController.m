@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [_stack setShiftDelegate:self];
 }
 
@@ -58,6 +59,14 @@
 
 -(void)stackView:(CSVStackView *)stackView didSelectViewAtIndex:(NSInteger)index {
     NSLog(@"Вы тапнули на View под индексом: %@", @(index));
+}
+
+-(void)stackView:(CSVStackView *)stackView willChangeViewAtIndex:(NSInteger)index {
+    NSLog(@"Выбран view под индексом: %@", @(index));
+}
+
+-(void)stackView:(CSVStackView *)stackView didChangeViewAtIndex:(NSInteger)index {
+    NSLog(@"Выбран view под индексом: %@", @(index));
 }
 
 #pragma mark - CSVStackViewShiftDelegate

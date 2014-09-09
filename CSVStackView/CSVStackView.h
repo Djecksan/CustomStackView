@@ -14,6 +14,8 @@
 - (UIView *)stackView:(CSVStackView *)stackView viewForRowAtIndex:(NSInteger)index;
 @optional
 -(void)stackView:(CSVStackView *)stackView didSelectViewAtIndex:(NSInteger)index;
+-(void)stackView:(CSVStackView *)stackView willChangeViewAtIndex:(NSInteger)index;
+-(void)stackView:(CSVStackView *)stackView didChangeViewAtIndex:(NSInteger)index;
 @end
 
 @protocol CSVStackViewShiftDelegate <NSObject>

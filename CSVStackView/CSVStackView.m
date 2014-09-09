@@ -92,16 +92,21 @@
             [self insertSubview:recognizer.view atIndex:0];
             _currentIndex = _currentIndex >= (_countOfViews - 1) ? 0 : _currentIndex + 1;
             isSliding = YES;
+            //willChangeView
+            if([_delegate respondsToSelector:@selector(stackView:willChangeViewAtIndex:)])
+                [_delegate stackView:self willChangeViewAtIndex:_currentIndex];
         }
         
         [UIView animateWithDuration:0.3 animations:^{
             
-            if(_shift && isSliding) {
+            if(isSliding) {
+                
                 for (NSInteger i = 0; i < [[self subviews] count]; i++) {
                     CGRect rect = CGRectFromString(_viewRects[i]);
                     UIView *view = [self subviews][i];
                     [view setFrame:rect];
                 }
+                
             } else {
                 translation = CGPointMake(_firstX, _firstY);
                 [recognizer.view setCenter:translation];
@@ -109,6 +114,11 @@
             
         } completion:^(BOOL finished) {
              [self gestureUpdate];
+            
+            //didChangeView
+            if(isSliding && [_delegate respondsToSelector:@selector(stackView:didChangeViewAtIndex:)]) {
+                [_delegate stackView:self didChangeViewAtIndex:_currentIndex];
+            }
         }];
     }
 }
