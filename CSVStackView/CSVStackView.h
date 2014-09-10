@@ -26,7 +26,8 @@
 @interface CSVStackView : UIView
 @property (weak, nonatomic) IBOutlet id<CSVStackViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet id<CSVStackViewShiftDelegate> shiftDelegate;
-@property (nonatomic) BOOL isCircleSliding;
+
+@property (nonatomic, getter = isSlidingTransparentEffect) BOOL slidingTransparentEffect;
 
 -(void)reloadData;
 @end

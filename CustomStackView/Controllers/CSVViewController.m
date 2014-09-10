@@ -19,7 +19,9 @@
 {
     [super viewDidLoad];
     
+    [_stack setDelegate:self];
     [_stack setShiftDelegate:self];
+    [_stack setSlidingTransparentEffect:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -62,11 +64,11 @@
 }
 
 -(void)stackView:(CSVStackView *)stackView willChangeViewAtIndex:(NSInteger)index {
-    NSLog(@"Выбран view под индексом: %@", @(index));
+    NSLog(@"willChangeViewAtIndex: %@", @(index));
 }
 
 -(void)stackView:(CSVStackView *)stackView didChangeViewAtIndex:(NSInteger)index {
-    NSLog(@"Выбран view под индексом: %@", @(index));
+    NSLog(@"didChangeViewAtIndex: %@", @(index));
 }
 
 #pragma mark - CSVStackViewShiftDelegate
@@ -80,6 +82,8 @@
     CGPoint newPoint = [self pointByShift:shift * index andPoint:stackItem.center];
     return CGRectMake(newPoint.x - (newSize.width / 2), newPoint.y - (newSize.height / 2), newSize.width, newSize.height);
 }
+
+//helpers shift calculate
 
 -(CGPoint)pointByShift:(CGFloat)shift andPoint:(CGPoint)point {
     return CGPointMake(point.x, point.y - shift * 1.3);

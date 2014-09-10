@@ -83,11 +83,18 @@
     translation = CGPointMake(_firstX+translation.x, _firstY+translation.y);
     [recognizer.view setCenter:translation];
     
+     CGFloat distance = [self distanceBetweenTwoPoints:CGPointMake(_firstX, _firstY) toPoint:translation];
+    
+    if(_slidingTransparentEffect) {
+        CGFloat maxOffset = MIN(CGRectGetHeight(recognizer.view.frame), CGRectGetWidth(recognizer.view.frame));
+        CGFloat alpha = 1.0 - distance / (maxOffset);
+        [recognizer.view setAlpha:MAX(alpha, 0.3)];
+    }
+    
     if([recognizer state] == UIGestureRecognizerStateEnded) {
         
         BOOL isSliding = NO;
-        
-        CGFloat distance = [self distanceBetweenTwoPoints:CGPointMake(_firstX, _firstY) toPoint:translation];
+
         if (distance > MIN(CGRectGetHeight(recognizer.view.frame), CGRectGetWidth(recognizer.view.frame)) / 2) {
             [self insertSubview:recognizer.view atIndex:0];
             _currentIndex = _currentIndex >= (_countOfViews - 1) ? 0 : _currentIndex + 1;
@@ -104,13 +111,19 @@
                 for (NSInteger i = 0; i < [[self subviews] count]; i++) {
                     CGRect rect = CGRectFromString(_viewRects[i]);
                     UIView *view = [self subviews][i];
+                    
+                    
                     [view setFrame:rect];
+                    
                 }
                 
             } else {
                 translation = CGPointMake(_firstX, _firstY);
                 [recognizer.view setCenter:translation];
             }
+            
+            if(_slidingTransparentEffect)
+                [recognizer.view setAlpha:1.0];
             
         } completion:^(BOOL finished) {
              [self gestureUpdate];
