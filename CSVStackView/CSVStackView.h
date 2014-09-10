@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 @class CSVStackView;
 
+NS_ENUM(NSInteger, CSVStackViewTypeSliding) {
+    CSVStackViewTypeSlidingDefault,
+    CSVStackViewTypeSlidingHorizontal
+};
+
 @protocol CSVStackViewDelegate <NSObject>
 - (NSInteger)numberOfViews;
 - (UIView *)stackView:(CSVStackView *)stackView viewForRowAtIndex:(NSInteger)index;
@@ -27,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet id<CSVStackViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet id<CSVStackViewShiftDelegate> shiftDelegate;
 
+@property (nonatomic)                                      enum CSVStackViewTypeSliding typeSliding;
 @property (nonatomic, getter = isSlidingTransparentEffect) BOOL slidingTransparentEffect;
 
 -(void)reloadData;

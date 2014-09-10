@@ -22,6 +22,7 @@
     [_stack setDelegate:self];
     [_stack setShiftDelegate:self];
     [_stack setSlidingTransparentEffect:YES];
+    [_stack setTypeSliding:CSVStackViewTypeSlidingHorizontal];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

@@ -17,6 +17,7 @@
 @property (nonatomic)            NSInteger currentIndex;
 @property (nonatomic)            CGFloat firstX;
 @property (nonatomic)            CGFloat firstY;
+@property (nonatomic)            CGAffineTransform defaultTransform;
 @property (nonatomic)            CGFloat shift;
 
 @end
@@ -74,28 +75,44 @@
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {
     
     __block CGPoint translation = [recognizer translationInView:recognizer.view];
+    CGFloat maxOffset = MIN(CGRectGetHeight(recognizer.view.frame), CGRectGetWidth(recognizer.view.frame));
     
     if([recognizer state] == UIGestureRecognizerStateBegan) {
         _firstX = [recognizer.view center].x;
         _firstY = [recognizer.view center].y;
+        _defaultTransform = [recognizer.view transform];
     }
     
-    translation = CGPointMake(_firstX+translation.x, _firstY+translation.y);
+    switch (_typeSliding) {
+        case CSVStackViewTypeSlidingHorizontal: {
+            
+                CGAffineTransform transform = CGAffineTransformMakeTranslation(_defaultTransform.tx, _defaultTransform.ty);
+                transform = CGAffineTransformRotate(transform, (translation.x / maxOffset));
+                recognizer.view.transform = transform;
+
+                translation = CGPointMake(_firstX+translation.x, _firstY);
+            }
+            
+            break;
+        default:
+            translation = CGPointMake(_firstX+translation.x, _firstY+translation.y);
+            break;
+    }
+    
     [recognizer.view setCenter:translation];
     
      CGFloat distance = [self distanceBetweenTwoPoints:CGPointMake(_firstX, _firstY) toPoint:translation];
     
     if(_slidingTransparentEffect) {
-        CGFloat maxOffset = MIN(CGRectGetHeight(recognizer.view.frame), CGRectGetWidth(recognizer.view.frame));
         CGFloat alpha = 1.0 - distance / (maxOffset);
-        [recognizer.view setAlpha:MAX(alpha, 0.3)];
+        [recognizer.view setAlpha:MAX(alpha, 0.1)];
     }
     
     if([recognizer state] == UIGestureRecognizerStateEnded) {
         
         BOOL isSliding = NO;
 
-        if (distance > MIN(CGRectGetHeight(recognizer.view.frame), CGRectGetWidth(recognizer.view.frame)) / 2) {
+        if (distance > maxOffset / 2) {
             [self insertSubview:recognizer.view atIndex:0];
             _currentIndex = _currentIndex >= (_countOfViews - 1) ? 0 : _currentIndex + 1;
             isSliding = YES;
@@ -106,6 +123,9 @@
         
         [UIView animateWithDuration:0.3 animations:^{
             
+            if(_typeSliding == CSVStackViewTypeSlidingHorizontal)
+                recognizer.view.transform = _defaultTransform;
+            
             if(isSliding) {
                 
                 for (NSInteger i = 0; i < [[self subviews] count]; i++) {
@@ -114,7 +134,6 @@
                     
                     
                     [view setFrame:rect];
-                    
                 }
                 
             } else {
