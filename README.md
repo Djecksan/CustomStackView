@@ -10,6 +10,6 @@ CustomStackView
 
 ![alt tag](https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalNoAlpha.gif)
 
-![alt tag](https://raw.githubusercontent.com/Djecksan/CustomStackView/master/ImagesnoShiftHorizontalAlpha.gif)
+![alt tag](https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/noShiftHorizontalAlpha.gif)
 
 
