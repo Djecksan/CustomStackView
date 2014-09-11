@@ -107,21 +107,17 @@ pod "CustomStackView", "~> 1.0.1"
 
 ```
 
-<p align="center" >
-  <img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView">
-</p>
+<table>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
+        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/default.gif" alt="CustomStackView" title="CustomStackView"></td>
+    </tr>
+     <tr>
+        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
+        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalNoAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
+    </tr>
+</table>
 
-<p align="center" >
-  <img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/default.gif" alt="CustomStackView" title="CustomStackView">
-</p>
-
-<p align="center" >
-  <img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalAlpha.gif" alt="CustomStackView" title="CustomStackView">
-</p>
-
-<p align="center" >
-  <img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalNoAlpha.gif" alt="CustomStackView" title="CustomStackView">
-</p>
 
 <p align="center" >
   <img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/noShiftHorizontalAlpha.gif" alt="CustomStackView" title="CustomStackView">
