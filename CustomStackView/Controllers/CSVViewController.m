@@ -28,7 +28,6 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_stack reloadData];
-   
 }
 
 #pragma mark - CSVStackViewDelegate
@@ -55,9 +54,20 @@
     [label setText:[NSString stringWithFormat:@"%@", @(index)]];
     [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:50]];
     
-    [view addSubview:label];
+    //Magic text scale
+    UIImageView *imageV = [[UIImageView alloc] initWithImage:[self imageFromView:label]];
+    [imageV setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
+    [view addSubview:imageV];
     
     return view;
+}
+                           
+-(UIImage *)imageFromView :(UIView *)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0.0f);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
 }
 
 -(void)stackView:(CSVStackView *)stackView didSelectViewAtIndex:(NSInteger)index {
@@ -87,7 +97,7 @@
 //helpers shift calculate
 
 -(CGPoint)pointByShift:(CGFloat)shift andPoint:(CGPoint)point {
-    return CGPointMake(point.x, point.y - shift * 1.3);
+    return CGPointMake(point.x, point.y - shift);
 }
 
 -(CGSize)sizeByShiftWidth : (CGFloat)shift andSize:(CGSize)size {

@@ -104,7 +104,7 @@
      CGFloat distance = [self distanceBetweenTwoPoints:CGPointMake(_firstX, _firstY) toPoint:translation];
     
     if(_slidingTransparentEffect) {
-        CGFloat alpha = 1.0 - distance / (maxOffset);
+        CGFloat alpha = 1.0 - distance / (maxOffset / 2);
         [recognizer.view setAlpha:MAX(alpha, 0.1)];
     }
     
@@ -112,7 +112,8 @@
         
         BOOL isSliding = NO;
 
-        if (distance > maxOffset / 2) {
+        if (distance > maxOffset / 3) {
+            
             [self insertSubview:recognizer.view atIndex:0];
             _currentIndex = _currentIndex >= (_countOfViews - 1) ? 0 : _currentIndex + 1;
             isSliding = YES;
