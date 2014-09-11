@@ -107,7 +107,7 @@ pod "CustomStackView", "~> 1.0.1"
 
 ```
 
-<div align="center">
+<div align="center" width="100%">
 <table>
     <tr>
         <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
