@@ -107,10 +107,9 @@ pod "CustomStackView", "~> 1.0.1"
 
 ```
 
-<div align="center" width="100%">
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
+        <td width="500px"><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
         <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/default.gif" alt="CustomStackView" title="CustomStackView"></td>
     </tr>
      <tr>
@@ -118,7 +117,6 @@ pod "CustomStackView", "~> 1.0.1"
         <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalNoAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
     </tr>
 </table>
-</div>
 
 
 <p align="center" >
