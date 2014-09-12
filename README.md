@@ -146,3 +146,6 @@ pod "CustomStackView", "~> 1.0.1"
 [_stack setSlidingTransparentEffect:YES];
 [_stack setTypeSliding:CSVStackViewTypeSlidingHorizontal];
 ```
+## Licenses
+
+All source code is licensed under the [MIT License](https://github.com/Djecksan/CustomStackView/edit/master/LICENSE).
