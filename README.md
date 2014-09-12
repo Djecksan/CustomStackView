@@ -3,7 +3,7 @@ CustomStackView
 
 ### Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like CustomStackView in your projects.
+[CocoaPods](http://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
 
 #### Podfile
 
@@ -13,6 +13,7 @@ pod "CustomStackView", "~> 1.0.1"
 ```
 
 ### Initialization
+
 ```objective-c
 #import "CSVViewController.h"
 #import "CSVStackView.h"
