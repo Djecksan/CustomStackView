@@ -107,18 +107,42 @@ pod "CustomStackView", "~> 1.0.1"
 
 ```
 
-<table>
-    <tr>
-        <td width="500px"><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
-        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/default.gif" alt="CustomStackView" title="CustomStackView"></td>
-    </tr>
-     <tr>
-        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
-        <td><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalNoAlpha.gif" alt="CustomStackView" title="CustomStackView"></td>
-    </tr>
-</table>
+<p align="center" ><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/defaultAlpha.gif" alt="CustomStackView" title="CustomStackView"></p>
 
+```objective-c
+[_stack setDelegate:self];
+[_stack setShiftDelegate:self];
+[_stack setSlidingTransparentEffect:YES];
+```
+ 
+<p align="center" ><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/default.gif" alt="CustomStackView" title="CustomStackView"></p>
 
-<p align="center" >
-  <img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/noShiftHorizontalAlpha.gif" alt="CustomStackView" title="CustomStackView">
-</p>
+```objective-c
+[_stack setDelegate:self];
+[_stack setShiftDelegate:self];
+```
+
+<p align="center" ><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalAlpha.gif" alt="CustomStackView" title="CustomStackView"></p>
+
+```objective-c
+[_stack setDelegate:self];
+[_stack setShiftDelegate:self];
+[_stack setSlidingTransparentEffect:YES];
+[_stack setTypeSliding:CSVStackViewTypeSlidingHorizontal];
+```
+
+<p align="center" ><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/horizontalNoAlpha.gif" alt="CustomStackView" title="CustomStackView"></p>
+
+```objective-c
+[_stack setDelegate:self];
+[_stack setShiftDelegate:self];
+[_stack setTypeSliding:CSVStackViewTypeSlidingHorizontal];
+```
+
+<p align="center" ><img src="https://raw.githubusercontent.com/Djecksan/CustomStackView/master/Images/noShiftHorizontalAlpha.gif" alt="CustomStackView" title="CustomStackView"></p>
+
+```objective-c
+[_stack setDelegate:self];
+[_stack setSlidingTransparentEffect:YES];
+[_stack setTypeSliding:CSVStackViewTypeSlidingHorizontal];
+```
